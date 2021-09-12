@@ -1,0 +1,30 @@
+.meetupDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.meetupDetail li {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.meetupDetail li img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.meetupDetail li h1 {
+  margin: 10px;
+}

@@ -1,30 +1,16 @@
-import React, { useState } from 'react';
+import React, { Fragment, useContext } from 'react';
 import type { NextPage } from 'next'
-import NewTodo from '../components/NewTodo'
-import TodoList from '../components/TodoList'
-import styles from '../styles/Home.module.css'
-import { Todo } from '../components/todo.model';
 
+import MeetupList from '../components/meetup/MeetupList';
+import MeetupContext from '../store/meetup-context';
+
+/* The home page -- contains list of meetup items */
 const Home: NextPage = () => {
-  const [todoList, setTodoList] = useState<Todo[]>([]);
+  const meetupCtx = useContext(MeetupContext);
 
-  const addTaskHandler = (newTaskValue: string) => {
-    setTodoList(prevState => [
-      ...prevState,
-      {id: prevState.length + 1, text: newTaskValue.toString()}
-    ])
-  }
-
-  const deleteTaskHandler = (id: number) => {
-    setTodoList(prevState => prevState.filter(x => x.id !== id))
-  }
-
-  return (
-    <div className={styles.container}>
-      <NewTodo onTaskAdded={addTaskHandler}/>
-      <TodoList items={todoList} onTaskDelete={deleteTaskHandler}/>
-    </div>
-  )
+  return <Fragment>
+    <MeetupList meetups={meetupCtx.meetups} />
+  </Fragment>
 }
 
 export default Home
