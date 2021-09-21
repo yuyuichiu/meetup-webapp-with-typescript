@@ -20,7 +20,7 @@ const TestWidget: React.FC<Props> = (props) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>This is the content within modal!</p>
+        <p>This is the popup content within modal!</p>
       </Modal.Body>
 
       <Modal.Footer>
